@@ -1,0 +1,14 @@
+{%extends 'base.html' %}
+{%from "macros.html" import static_file%}
+
+{%block content %}
+<hi>
+    <img src="{{url_for('static',filename='img/background.jpg')}}" width="50">
+    L.Q
+</hi>
+<ul>
+    <li>
+        Hello,World!
+    </li>
+</ul>
+{% endblock %}
