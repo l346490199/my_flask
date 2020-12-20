@@ -20,3 +20,8 @@ def index():
 def just_flash():
     flash('I am flash,Who is looking for me.') 
     return redirect(url_for("index"))
+
+@app.route('/hi/<name>')
+@app.route('/hi,defaults={"name": "Programmer"}')
+def hi(name):
+    return render_template('hello.html',name=name)

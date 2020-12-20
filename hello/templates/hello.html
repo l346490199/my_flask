@@ -1,0 +1,10 @@
+{%extends 'instal.html' %}
+{% block title %}
+Hi,{{name}}
+{% endblock %}
+
+{% block content %}
+    <li>Hello,{{name}}</li>
+    <br><br>
+    <li><a href="{{request.referrer or url_for('index')}}">返回</a></li>
+{% endblock %}
