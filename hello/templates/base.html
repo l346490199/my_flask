@@ -1,0 +1,39 @@
+{%from "macros.html"import static_file %}
+<! DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <meta charset = "utf-8" />
+            <title>{%block title%}欢迎界面{% endblock %}</title>
+            {{static_file("icon","img/favicon.png")}}
+            {%block styles %}
+            <!-- #css脚本 -->
+            {{static_file("css","style.css")}}
+            {%endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <nav>
+            <ul><li><a href="{{ url_for('index')}}" title="HOME">Home</a></li></ul>
+        </nav>
+        <hr>
+        <main>
+            {%for message in get_flashed_messages() %}
+                <div class="alert">{{message}}</div>
+            {%endfor %}
+            {%block content %}{% endblock %}
+        </main>
+        <footer>
+            <hr>
+            {% block footer %}
+            <small>&copy; 2020<a href="http://lqnas/"title="Written by Q liu">Q.Liu</a>
+                <a href="http://helloflask.com"title="A HelloFlask project">helloflask</a>
+            </small>
+            {% endblock %}
+        </footer>
+        {% block scripts %}
+        <!-- #JavaScript脚本 -->
+        
+        {%endblock %}
+    </body>
+</html>
